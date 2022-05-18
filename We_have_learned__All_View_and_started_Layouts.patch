@@ -1,0 +1,148 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 1d8355dcbe62d691c88b874dace6fbf1aced901c)
++++ b/.idea/misc.xml	(revision 4b23edc1af51dbd1c8b4c90cdd80f3eb4bb1a1b0)
+@@ -3,8 +3,8 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
+-        <entry key="..\:/PROJECTS/AndroidSCourseProjects/AndroidStartProj/app/src/main/res/layout/activity_main.xml" value="0.1" />
+-        <entry key="..\:/PROJECTS/AndroidSCourseProjects/AndroidStartProj/app/src/main/res/layout/second_layout.xml" value="0.24010416666666667" />
++        <entry key="..\:/PROJECTS/AndroidSCourseProjects/AndroidStartProj/app/src/main/res/layout/activity_main.xml" value="0.18" />
++        <entry key="..\:/PROJECTS/AndroidSCourseProjects/AndroidStartProj/app/src/main/res/layout/second_layout.xml" value="0.15230263157894736" />
+         <entry key="..\:/PROJECTS/AndroidSCourseProjects/AndroidStartProj/app/src/main/res/menu/menu_start.xml" value="0.23055555555555557" />
+       </map>
+     </option>
+Index: app/src/main/java/ru/synergi/androidstartproj/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/ru/synergi/androidstartproj/MainActivity.java b/app/src/main/java/ru/synergi/androidstartproj/MainActivity.java
+--- a/app/src/main/java/ru/synergi/androidstartproj/MainActivity.java	(revision 1d8355dcbe62d691c88b874dace6fbf1aced901c)
++++ b/app/src/main/java/ru/synergi/androidstartproj/MainActivity.java	(revision 4b23edc1af51dbd1c8b4c90cdd80f3eb4bb1a1b0)
+@@ -3,6 +3,7 @@
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.constraintlayout.widget.ConstraintLayout;
+ 
++import android.graphics.Color;
+ import android.os.Bundle;
+ import android.view.ViewGroup;
+ import android.widget.TextView;
+@@ -13,6 +14,13 @@
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+ 
++    TextView textView = (TextView) findViewById(R.id.normal);
++
++    textView.setText("Text from Java code");
++    textView.setTextColor(Color.RED);
++
++
++
+ //    TextView textView = (TextView) findViewById(R.id.header);
+ //
+ //    textView.setText("Hello from Java");
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision 1d8355dcbe62d691c88b874dace6fbf1aced901c)
++++ b/app/src/main/res/layout/activity_main.xml	(revision 4b23edc1af51dbd1c8b4c90cdd80f3eb4bb1a1b0)
+@@ -4,56 +4,45 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    android:gravity="center"
+     android:orientation="vertical"
+     tools:context=".MainActivity">
+ 
+-    <!--    <TextView-->
+-    <!--        android:layout_width="wrap_content"-->
+-    <!--        android:layout_height="wrap_content"-->
+-    <!--        android:layout_weight="1"-->
+-    <!--        android:text="Hello World!"-->
+-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+-    <!--        app:layout_constraintRight_toRightOf="parent"-->
+-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+-
+-    <!--    <TextView-->
+-    <!--        android:id="@+id/textView"-->
+-    <!--        android:layout_width="match_parent"-->
+-    <!--        android:layout_height="wrap_content"-->
+-    <!--        android:layout_weight="1"-->
+-    <!--        android:text="ouzwhefcsh wenfocsh ;foush;f cshlfchs"-->
+-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+-    <!--        app:layout_constraintHorizontal_bias="0.496"-->
+-    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+-    <!--        app:layout_constraintRight_toRightOf="parent"-->
+-    <!--        app:layout_constraintTop_toTopOf="parent"-->
+-    <!--        app:layout_constraintVertical_bias="0.71" />-->
+-
+     <TextView
+-        android:id="@+id/text"
+-        android:layout_width="wrap_content"
+-        android:layout_height="200dp"
+-        android:gravity="center"
+-        android:text="Android is the Best"
+-        android:textSize="30sp"
+-        android:layout_weight="1"
+-        />
+-
+-
+-    <View
+-        android:layout_width="wrap_content"
+-        android:layout_weight="4"
++        android:id="@+id/normal"
++        android:layout_width="200dp"
+         android:layout_height="wrap_content"
+-        android:foreground="@drawable/ic_launcher_background" />
++        android:layout_marginTop="10dp"
++        android:background="#3F51B5"
++        android:padding="20dp"
++        android:text="width 200dp"
++        android:textColor="#FFF"
++        android:textSize="26sp"
++        android:textStyle="normal" />
+ 
+-    <Button
+-        android:id="@+id/buton"
++    <TextView
++        android:id="@+id/bold"
++        android:layout_width="400dp"
++        android:layout_height="300dp"
++        android:layout_marginTop="10dp"
++        android:background="#3F51B5"
++        android:gravity="center|center_horizontal"
++        android:padding="20dp"
++        android:text="width wrap_content"
++        android:textColor="#FFF"
++        android:textSize="26sp"
++        android:textStyle="bold" />
++
++    <TextView
++        android:id="@+id/italic"
+         android:layout_width="match_parent"
+-        android:layout_height="100dp"
+-        android:layout_weight="1"
+-        android:layout_gravity="center"
+-        android:text="Approve" />
++        android:layout_height="wrap_content"
++        android:layout_marginTop="10dp"
++        android:background="#009688"
++        android:gravity="center"
++        android:padding="20dp"
++        android:text="width match_parent"
++        android:textColor="#FFF"
++        android:textSize="26sp"
++        android:textStyle="italic" />
+ 
+ </LinearLayout>
+\ No newline at end of file
