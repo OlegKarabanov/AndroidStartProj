@@ -5,8 +5,8 @@
     android:id="@+id/constrLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
+
 
 
     <!--    <TextView
@@ -142,7 +142,7 @@
         android:id="@+id/view_hide1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Меню"
+        android:text="565"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -153,8 +153,7 @@
         android:id="@+id/view_hide2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_goneMarginTop="58dp"
-        android:text="Выбор"
+        android:text="123"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintLeft_toRightOf="@+id/view_hide1"
