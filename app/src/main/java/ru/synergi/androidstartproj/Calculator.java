@@ -14,74 +14,61 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-
 public class Calculator extends AppCompatActivity {
 
 private static final String LogcatTag="CALCULATOR_ACTIVITY";
+private static final String LifecycleTog="LIVECYCLE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(LifecycleTog, "I'm onCreate(),and i'm started");
         setContentView(R.layout.activity_calculator);
 
-
         final Button calculate = (Button) findViewById(R.id.calc);
-
 
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-            calculateAnswer();
-
+                Log.d(LogcatTag, "Button have been pushed");
+            calculateAnswer()
+           // Intent i = new Intent(Calculator.this,MainActivity.class);
+           // startActivity();
             }
         });
-
     }
-
     private void calculateAnswer(){
-        EditText numOne = (EditText) findViewById(R.id.editTextNumberDecimal); // ищем первый номер
-        EditText numTwo = (EditText) findViewById(R.id.editTextNumberDecimal2); // ищем второй номер
+        EditText numOne = (EditText) findViewById(R.id.editTextNumberDecimal);
+        EditText numTwo = (EditText) findViewById(R.id.editTextNumberDecimal2);
 
-        RadioButton add = (RadioButton) findViewById(R.id.add); // ищем радио баттон прибавить
+        RadioButton add = (RadioButton) findViewById(R.id.add);
         RadioButton sub = (RadioButton) findViewById(R.id.subtract);
         RadioButton multiply = (RadioButton) findViewById(R.id.multiple);
         RadioButton divide = (RadioButton) findViewById(R.id.divide);
 
-
-        TextView answer = (TextView) findViewById(R.id.result); // ищем куда выгрузить результат
-
-//        Log.d(LogcatTag, "All views have been founded");
-
+        TextView answer = (TextView) findViewById(R.id.result);
 
         double numone = Double.parseDouble(numOne.getText().toString());
         double numtwo = Double.parseDouble(numTwo.getText().toString());
-//        Log.d(LogcatTag, "Successfully grabbed data from input fields");
-//        Log.d(LogcatTag, "numone is: " + numone + ";" + "numtwo is: " + numtwo);
 
-        double solution = 0; // изначальный результат
+        double solution = 0;
 
         if (add.isChecked()){
-            Log.d(LogcatTag, "Operation is add");
             solution = numone + numtwo;
         }
         if (sub.isChecked()){
-            Log.d(LogcatTag, "Operation is sub");
             solution = numone - numtwo;
         }
         if (multiply.isChecked()){
-            Log.d(LogcatTag, "Operation is multiply");
             solution = numone * numtwo;
         }
         if (divide.isChecked()){
-            Log.d(LogcatTag, "Operation is divide");
-            if(numtwo == 0){
-                Toast.makeText(this,"На ноль делить низяяяя!", Toast.LENGTH_SHORT).show();
-                return; // возврат программы если ввели ноль
+            if(numtwo == 0 ){
+                Toast.makeText(this,"На ноль делить нельзя", Toast.LENGTH_SHORT).show();
+                return;
             }
             solution = numone / numtwo;
         }
-        Log.d(LogcatTag, "The result of operation is: " + solution);
-
         answer.setText("Результат: "+ solution);
     }
 
