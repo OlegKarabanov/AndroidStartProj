@@ -82,7 +82,7 @@ private static final String LifeCycleTag="LIFECYClE";
         RadioButton divide = (RadioButton) findViewById(R.id.divide);
 
         double numone = 0;
-        double numowo = 0;
+        double numtwo = 0;
         String num1 = numOne.getText().toString();
         String num2 = numTwo.getText().toString();
         TextView answer = (TextView) findViewById(R.id.result);
