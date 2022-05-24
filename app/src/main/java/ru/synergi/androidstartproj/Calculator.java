@@ -17,26 +17,61 @@ import java.util.Locale;
 public class Calculator extends AppCompatActivity {
 
 private static final String LogcatTag="CALCULATOR_ACTIVITY";
-private static final String LifecycleTog="LIVECYCLE";
+private static final String LifeCycleTag="LIFECYClE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(LifecycleTog, "I'm onCreate(),and i'm started");
+        Log.d(LifeCycleTag,"I'm onCreate(), and i'm started");
+
         setContentView(R.layout.activity_calculator);
 
         final Button calculate = (Button) findViewById(R.id.calc);
 
-        calculate.setOnClickListener(new View.OnClickListener() {
+        calculate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Log.d(LogcatTag, "Button have been pushed");
-            calculateAnswer()
-           // Intent i = new Intent(Calculator.this,MainActivity.class);
-           // startActivity();
+               Log.d(LogcatTag, "Button have been pushed");
+                calculateAnswer();
             }
         });
     }
+
+    public Calculator() {
+        super();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    Log.d(LifeCycleTag, "I'm onCreate(), and i'm started");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(LifeCycleTag,"I'm onStop(), and i'm started");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(LifeCycleTag,"I'm onDestroy(), and i'm started");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(LifeCycleTag, "I'm onPause(), and i'm started");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(LifeCycleTag,"I'm onResume(), and i'm started");
+    }
+
     private void calculateAnswer(){
         EditText numOne = (EditText) findViewById(R.id.editTextNumberDecimal);
         EditText numTwo = (EditText) findViewById(R.id.editTextNumberDecimal2);
@@ -46,10 +81,15 @@ private static final String LifecycleTog="LIVECYCLE";
         RadioButton multiply = (RadioButton) findViewById(R.id.multiple);
         RadioButton divide = (RadioButton) findViewById(R.id.divide);
 
+        double numone = 0;
+        double numtwo = 0;
+        String num1 = numOne.getText().toString();
+        String num2 = numTwo.getText().toString();
         TextView answer = (TextView) findViewById(R.id.result);
-
-        double numone = Double.parseDouble(numOne.getText().toString());
-        double numtwo = Double.parseDouble(numTwo.getText().toString());
+        if (num1.equals("") && num1 != null) {
+        numone = Double.parseDouble(numOne.getText().toString());}
+        if (num2.equals("") && num2 != null) {
+        numtwo = Double.parseDouble(numTwo.getText().toString());}
 
         double solution = 0;
 
