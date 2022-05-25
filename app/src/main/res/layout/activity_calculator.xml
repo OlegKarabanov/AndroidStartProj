@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F3140"
-    android:backgroundTintMode="add"
     tools:context=".Calculator">
 
     <EditText
@@ -14,29 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="44dp"
-        android:backgroundTint="#FDFDFD"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        app:layout_constraintRight_toLeftOf="@id/editTextNumberDecimal"
+        app:layout_constraintRight_toLeftOf="@id/editTextNumberDecimal2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/editTextNumberDecimal2"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FEFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/editTextNumberDecimal" />
@@ -56,36 +45,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="+"
-            android:textColor="#FBFBFB"
-            android:textSize="24sp" />
+            android:text="Add" />
+
 
         <RadioButton
             android:id="@+id/subtract"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="-"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:text="Subtract" />
+
 
         <RadioButton
             android:id="@+id/multiple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="*"
-            android:textColor="#FFFCFC"
-            android:textSize="24sp" />
+            android:text="Multiple" />
+
 
         <RadioButton
             android:id="@+id/divide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="/"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:text="Divide" />
 
     </RadioGroup>
 
@@ -94,8 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:backgroundTint="#3C5971"
-        android:text="Выполнить"
+        android:text="Calculate"
         app:layout_constraintEnd_toEndOf="@+id/radiogroup"
         app:layout_constraintStart_toStartOf="@+id/radiogroup"
         app:layout_constraintTop_toBottomOf="@+id/radiogroup" />
@@ -105,11 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:backgroundTintMode="add"
-        android:text="Результат:"
-        android:textColor="#D3C7C7"
-        android:textColorHint="#ECE7E7"
-        android:textSize="25dp"
+        android:text="You answer will be displayed here"
         app:layout_constraintEnd_toEndOf="@+id/calc"
         app:layout_constraintStart_toStartOf="@+id/calc"
         app:layout_constraintTop_toBottomOf="@+id/calc" />
