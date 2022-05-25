@@ -3,12 +3,15 @@ package ru.synergi.androidstartproj;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.RadioButton;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,20 @@ private static final String LifeCycleTag="LIFECYClE";
         setContentView(R.layout.activity_calculator);
 
         final Button calculate = (Button) findViewById(R.id.calc);
+
+
+
+        //Context training
+        // TextView textView = new TextView(this);
+        // ListAdapter adapter = new SimpleCursorAdapter(getApplicationContext());
+
+        //Доступ из класса Activity -- наследник Context
+        // getSystemService(LAYOUT_INFLATER_SERVICE);
+
+        // Shared pref доступ с импользованием контекста приложения
+
+        // SharedPreferences prefs = getApplicationContext().getSharedPreferences("PREFS", MODE_PRIVATE);
+
 
         calculate.setOnClickListener(new View.OnClickListener(){
             @Override
