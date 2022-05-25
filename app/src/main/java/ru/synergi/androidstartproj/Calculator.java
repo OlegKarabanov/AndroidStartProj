@@ -46,11 +46,16 @@ private static final String LifeCycleTag="LIFECYClE";
         // SharedPreferences prefs = getApplicationContext().getSharedPreferences("PREFS", MODE_PRIVATE);
 
 
+        /// intent -посылка (намерение) Андроиду
+
+
         calculate.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                Log.d(LogcatTag, "Button have been pushed");
                 calculateAnswer();
+                Intent i = new Intent(Calculator.this, MainActivity.class); //написать письмо
+                startActivity(i); //отправить письмо
             }
         });
     }
@@ -97,6 +102,10 @@ private static final String LifeCycleTag="LIFECYClE";
         RadioButton sub = (RadioButton) findViewById(R.id.subtract);
         RadioButton multiply = (RadioButton) findViewById(R.id.multiple);
         RadioButton divide = (RadioButton) findViewById(R.id.divide);
+
+        numOne.setText("0");
+        numTwo.setText("0");
+        add.setChecked(true);
 
         double numone = 0;
         double numtwo = 0;
