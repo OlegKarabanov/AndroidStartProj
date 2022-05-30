@@ -194,6 +194,7 @@ public class Calculator extends AppCompatActivity {
 
         }
 
+
         throw new ArithmeticException("I am generated exception");
 
     }
